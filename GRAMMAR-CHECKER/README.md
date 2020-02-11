@@ -17,7 +17,7 @@ Configuración en inglés:
 
 Resultados en inglés:
 
-![](GRAMMAR-CHECKERimg/ing2.jpg)
+![](GRAMMAR-CHECKER/img/ing2.jpg)
 
 ## Part II
 
