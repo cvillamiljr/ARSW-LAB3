@@ -13,11 +13,11 @@ To illustrate the use of the Spring framework, and the development environment f
 
 Configuración en inglés:
 
-![](/img/ing1.jpg)
+![](GRAMMAR-CHECKER/img/ing1.jpg)
 
 Resultados en inglés:
 
-![](/img/ing2.jpg)
+![](/GRAMMAR-CHECKERimg/ing2.jpg)
 
 ## Part II
 
@@ -25,11 +25,11 @@ Resultados en inglés:
 
 Configuración en español:
 
-![](/img/esp1.jpg)
+![](GRAMMAR-CHECKER/img/esp1.jpg)
 
 Resultados en español:
 
-![](/img/esp2.jpg)
+![](GRAMMAR-CHECKER/img/esp2.jpg)
 
 ### Comandos para ejecutar el main de ControlFrame:
 
