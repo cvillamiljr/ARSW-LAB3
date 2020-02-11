@@ -4,18 +4,16 @@
  * and open the template in the editor.
  */
 package edu.eci.arsw.blueprints.persistence;
+
 import edu.eci.arsw.blueprints.model.Blueprint;
+import java.util.Set;
 
 /**
  *
- * @author cesar
+ * @author diego.puerto
  */
-public class Filter {
+public interface filtering {
     
-    
-    public Blueprint filtrar(Blueprint blueprint){
-        return null;
-        
-    }
+    public Set<Blueprint> filtrar(Set<Blueprint> mapa);
     
 }

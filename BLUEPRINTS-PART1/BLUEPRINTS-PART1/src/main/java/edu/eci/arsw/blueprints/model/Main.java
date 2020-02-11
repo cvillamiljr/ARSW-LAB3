@@ -8,6 +8,7 @@ package edu.eci.arsw.blueprints.model;
 import edu.eci.arsw.blueprints.persistence.BlueprintNotFoundException;
 import edu.eci.arsw.blueprints.persistence.BlueprintPersistenceException;
 import edu.eci.arsw.blueprints.persistence.impl.InMemoryBlueprintPersistence;
+import edu.eci.arsw.blueprints.services.BlueprintsServices;
 import java.util.HashSet;
 import java.util.Set;
 import static org.junit.Assert.assertEquals;
@@ -17,7 +18,7 @@ import static org.junit.Assert.fail;
  *
  * @author diego.puerto
  */
-public class main {
+public class Main {
 
     public static void main(String a[]) throws BlueprintNotFoundException {
         Set<Blueprint> lista = new HashSet<Blueprint>();
@@ -47,6 +48,26 @@ public class main {
         System.out.println(ibpp.getBlueprintsByAuthor("john") + " ");
         System.out.println("Que deberia coincidir con el método usado en el Spring:");
         System.out.println(lista + " ");
+        /*
+        BlueprintsServices ibpp=new BlueprintsServices();
+        
+        Point[] pts=new Point[]{new Point(0, 0),new Point(10, 10)};
+        Point[] pts1=new Point[]{new Point(30, 30),new Point(40, 40)};
+        
+        Blueprint bp=new Blueprint("john", "thepaint",pts);
+        Blueprint bp1=new Blueprint("john", "thepaint1",pts1);
+        
+        try {
+            ibpp.addNewBlueprint(bp);
+            ibpp.addNewBlueprint(bp1);
+  
+        } catch (BlueprintPersistenceException ex) {
+            fail("Blueprint persistence failed inserting the first blueprint.");
+        }
+        
+        //ibpp.filtrar();
+        
+        System.out.println(ibpp.getAllBlueprints() + " ");*/
     }
 
 }
