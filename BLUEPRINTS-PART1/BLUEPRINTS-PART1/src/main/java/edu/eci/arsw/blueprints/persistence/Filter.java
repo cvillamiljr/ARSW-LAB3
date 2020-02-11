@@ -14,6 +14,7 @@ public class Filter {
     
     
     public Blueprint filtrar(Blueprint blueprint){
+        return null;
         
     }
     

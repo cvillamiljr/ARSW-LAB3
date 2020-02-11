@@ -10,6 +10,8 @@ import edu.eci.arsw.blueprints.model.Point;
 import edu.eci.arsw.blueprints.persistence.BlueprintNotFoundException;
 import edu.eci.arsw.blueprints.persistence.BlueprintPersistenceException;
 import edu.eci.arsw.blueprints.persistence.impl.InMemoryBlueprintPersistence;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.Test;
@@ -67,6 +69,60 @@ public class InMemoryPersistenceTest {
         }
                 
         
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    @Test
+    public void getBlueprintTest() throws BlueprintNotFoundException {
+        InMemoryBlueprintPersistence ibpp=new InMemoryBlueprintPersistence();
+        
+        Point[] pts=new Point[]{new Point(0, 0),new Point(10, 10)};
+        Blueprint bp=new Blueprint("john", "thepaint",pts);
+        
+        try {
+            ibpp.saveBlueprint(bp);
+        } catch (BlueprintPersistenceException ex) {
+            fail("Blueprint persistence failed inserting the first blueprint.");
+        }
+        
+        assertEquals(ibpp.getBlueprint("john", "thepaint"),bp);
+        
+    }
+    
+    
+    @Test
+    public void getBlueprintsByAuthorTest() throws BlueprintNotFoundException {
+        Set<Blueprint> lista = new HashSet<Blueprint>();
+        
+        InMemoryBlueprintPersistence ibpp=new InMemoryBlueprintPersistence();
+        Point[] pts=new Point[]{new Point(0, 0),new Point(10, 10)};
+        Point[] pts1=new Point[]{new Point(30, 30),new Point(40, 40)};
+        Point[] pts2=new Point[]{new Point(50, 50),new Point(60, 60)};
+        
+        Blueprint bp=new Blueprint("john", "thepaint",pts);
+        Blueprint bp1=new Blueprint("john", "thepaint1",pts1);
+        Blueprint bp2=new Blueprint("john", "thepaint2",pts2);
+        
+        try {
+            ibpp.saveBlueprint(bp);
+            ibpp.saveBlueprint(bp1);
+            ibpp.saveBlueprint(bp2);
+            lista.add(bp);
+            lista.add(bp1);
+            lista.add(bp2);
+            
+        } catch (BlueprintPersistenceException ex) {
+            fail("Blueprint persistence failed inserting the first blueprint.");
+        }
+        
+        assertEquals(ibpp.getBlueprintsByAuthor("john"),lista);
+                
     }
 
 
