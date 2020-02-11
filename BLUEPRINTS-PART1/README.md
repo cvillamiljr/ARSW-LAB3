@@ -8,21 +8,21 @@ The above requires:
 
     Inyeccion de InMemoryBlueprintPersistence:
     
-    ![](/BLUEPRINTS-PART1/img/1.jpg)
+    ![](BLUEPRINTS-PART1/img/1.jpg)
     
     Método a alto nivel (En BlueprintsServices)
     
-    ![](/BLUEPRINTS-PART1/img/2.jpg)
+    ![](BLUEPRINTS-PART1/img/2.jpg)
     
     Método a bajo nivel (En InMemoryBlueprintPersistence)
     
-    ![](/BLUEPRINTS-PART1/img/3.jpg)
+    ![](BLUEPRINTS-PART1/img/3.jpg)
 
 2. Make a program in which you create (through Spring) an instance of BlueprintServices, and rectify its functionality: register plans, consult plans, register specific plans, etc.
 
     Main:
     
-    ![](/BLUEPRINTS-PART1/img/4.jpg)
+    ![](BLUEPRINTS-PART1/img/4.jpg)
     
     Código para compilar:
     
@@ -30,7 +30,7 @@ The above requires:
     
     Resultados:
     
-    ![](/BLUEPRINTS-PART1/img/5.jpg)
+    ![](BLUEPRINTS-PART1/img/5.jpg)
 
 3. You want the plan query operations to perform a filtering process, before returning the planes consulted. These filters are looking to reduce the size of the plans, removing redundant data or simply sub-sampling, before returning them. Adjust the application (adding the abstractions and implementations you consider) so that the BlueprintServices class is injected with one of two possible 'filters' (or possible future filters). The use of more than one at a time is not contemplated:
     1. (A) Redundancy filtering: deletes consecutive points from the plane that are repeated.
