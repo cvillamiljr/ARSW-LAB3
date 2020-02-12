@@ -45,6 +45,10 @@ public class Blueprint {
     public void addPoint(Point p){
         this.points.add(p);
     }
+    
+    public void removeAllPoints(){
+    	points=new ArrayList<>();
+    }
 
     @Override
     public String toString() {

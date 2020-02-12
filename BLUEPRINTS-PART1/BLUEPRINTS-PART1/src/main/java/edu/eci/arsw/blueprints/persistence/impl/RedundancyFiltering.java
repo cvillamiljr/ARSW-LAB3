@@ -8,6 +8,9 @@ package edu.eci.arsw.blueprints.persistence.impl;
 import edu.eci.arsw.blueprints.model.Blueprint;
 import edu.eci.arsw.blueprints.model.Point;
 import edu.eci.arsw.blueprints.persistence.filtering;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import org.springframework.stereotype.Service;
 
@@ -21,17 +24,27 @@ public class RedundancyFiltering implements filtering{
     @Override
     public Set<Blueprint> filtrar(Set<Blueprint> mapa) {
         for (Blueprint BP : mapa){
+        	List<Point> P = new ArrayList<Point>();
             int j = 0;
-            while (j < (BP.getPoints().size()-1)){
-                if ((BP.getPoints().get(j).getX()==BP.getPoints().get(j+1).getX()) &&  (BP.getPoints().get(j).getY()==BP.getPoints().get(j+1).getY())){
-                    BP.getPoints().remove(j+1);
+            while (j < (BP.getPoints().size())){
+            	if (j==0) {
+            		P.add(BP.getPoints().get(j));
+            		j++;
+            	}
+            	else if ((BP.getPoints().get(j).getX()==P.get(P.size()-1).getX()) &&  (BP.getPoints().get(j).getY()==P.get(P.size()-1).getY())){
+                    j++;
                 }
-                else j++;
+                else {
+                	P.add(BP.getPoints().get(j));
+                	j++;
+                }
+            }
+            BP.removeAllPoints();
+            for (Point po : P) {
+            	BP.addPoint(po);
             }
         }
         return mapa;
     }
-    
-    
     
 }
