@@ -17,6 +17,14 @@ The above requires:
     Método a bajo nivel (En InMemoryBlueprintPersistence)
     
     ![](BLUEPRINTS-PART1/img/3.jpg)
+    
+    Test correspondientes para getBlueprint y getBlueprintsByAuthor:
+    
+    ![](BLUEPRINTS-PART1/img/6.jpg)
+    
+    Compilación de Test:
+    
+    ![](BLUEPRINTS-PART1/img/7.jpg)
 
 2. Make a program in which you create (through Spring) an instance of BlueprintServices, and rectify its functionality: register plans, consult plans, register specific plans, etc.
 
