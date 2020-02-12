@@ -47,7 +47,7 @@ The above requires:
 
 	![](BLUEPRINTS-PART1/img/8.jpg)
 
-	Se evidencia que se eliminan todos los puntos repetidos despues de filtrar:
+	Se evidencia que se eliminan todos los puntos seguidos repetidos después de filtrar:
 
 	![](BLUEPRINTS-PART1/img/9.jpg)
 
@@ -61,7 +61,7 @@ The above requires:
 
 	![](BLUEPRINTS-PART1/img/10.jpg)
 
-	Se evidencia que se eliminan todos los puntos repetidos despues de filtrar:
+	Se evidencia que se eliminan intercaladamente los puntos después de filtrar:
 
 	![](BLUEPRINTS-PART1/img/11.jpg)
 
