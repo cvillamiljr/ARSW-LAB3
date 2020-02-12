@@ -51,5 +51,18 @@ The above requires:
 
 	![](BLUEPRINTS-PART1/img/9.jpg)
 
-    2. (B) Subsampling filtering: suppresses 1 out of every 2 points in the plane, interspersed. 
+    2. (B) Subsampling filtering: suppresses 1 out of every 2 points in the plane, interspersed.
+
+	Cambiando el bean que se inyecta:
+
+	![](BLUEPRINTS-PART1/img/12.jpg)
+
+	Código de SubsamplingFiltering
+
+	![](BLUEPRINTS-PART1/img/10.jpg)
+
+	Se evidencia que se eliminan todos los puntos repetidos despues de filtrar:
+
+	![](BLUEPRINTS-PART1/img/11.jpg)
+
 4. Add the corresponding tests to each of these filters, and test its operation in the test program, verifying that only by changing the position of the annotations - without changing anything else - the program returns the filtered planes in the way (A) or in the way (B).

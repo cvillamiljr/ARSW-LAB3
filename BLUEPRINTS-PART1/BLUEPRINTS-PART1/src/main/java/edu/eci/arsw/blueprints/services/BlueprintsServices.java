@@ -31,7 +31,8 @@ public class BlueprintsServices {
     BlueprintsPersistence bpp=null;
     
     @Autowired
-    @Qualifier("RedundancyFiltering")
+    //@Qualifier("RedundancyFiltering")
+    @Qualifier("SubsamplingFiltering")
     filtering f=null;
     
     

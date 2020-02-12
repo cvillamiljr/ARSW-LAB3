@@ -53,14 +53,11 @@ public class Main {
         
         
         Point[] pts=new Point[]{new Point(0, 0),new Point(10, 10),new Point(10, 10), new Point(10, 10),new Point(10, 15)};
-        //Point[] pts1=new Point[]{new Point(30, 30),new Point(40, 40)};
         
         Blueprint bp=new Blueprint("john", "thepaint",pts);
-        //Blueprint bp1=new Blueprint("sam", "thepaint1",pts1);
         
         try {
             BS.addNewBlueprint(bp);
-            //BS.addNewBlueprint(bp1);
   
         } catch (BlueprintPersistenceException ex) {
             fail("Blueprint persistence failed inserting the first blueprint.");

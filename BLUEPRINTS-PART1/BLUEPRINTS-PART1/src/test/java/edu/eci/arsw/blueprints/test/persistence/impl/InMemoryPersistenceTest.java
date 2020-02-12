@@ -144,4 +144,50 @@ public class InMemoryPersistenceTest {
 
 
     
+    
+    @Test
+    public void RedundancyFilteringTest() throws BlueprintNotFoundException{
+    	//crea usando BlueprintsServices
+    	ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+    	BlueprintsServices BS = ac.getBean(BlueprintsServices.class);
+    	
+    	ApplicationContext acc = new ClassPathXmlApplicationContext("applicationContext.xml");
+    	BlueprintsServices BS1 = acc.getBean(BlueprintsServices.class);
+    	
+    	Point p1 = new Point(0, 0);
+    	Point p2 = new Point(10, 10);
+    	Point p3 = new Point(10, 10);
+    	Point p4 = new Point(10, 10);
+    	Point p5 = new Point(10, 15);
+    	
+    	String name = "john";
+    	String autor = "thepaint";
+    	
+        Blueprint bp=new Blueprint(name, autor);
+        Blueprint bp1=new Blueprint(name, autor);
+        
+        bp.addPoint(p1);
+        bp.addPoint(p2);
+        bp.addPoint(p3);
+        bp.addPoint(p4);
+        bp.addPoint(p5);
+        
+        bp1.addPoint(p1);
+        bp1.addPoint(p2);
+        bp1.addPoint(p5);
+        
+        try {
+            BS.addNewBlueprint(bp);
+            BS1.addNewBlueprint(bp1);
+  
+        } catch (BlueprintPersistenceException ex) {
+            fail("Blueprint persistence failed inserting the first blueprint.");
+        }
+
+        BS.filtrar();
+        
+                
+    }
+    
+    
 }
